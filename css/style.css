@@ -73,7 +73,19 @@ meter {
     -webkit-user-drag: element;
 }
 
+.container{
+    height: 100vh;
+    background-color: darkolivegreen;
+}
+
 #box{
     text-align: center;
     font-size: 3em;
+    padding-top: 100px;
+}
+
+#ticking{
+    text-align: center;
+    font-size: 2em;
+    padding-top: 30px;
 }

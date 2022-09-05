@@ -48,6 +48,19 @@ window.addEventListener("load", function () {
   }
   //   console.log(numbers);
   boxNumber.innerHTML = numbers;
+  let countdown = 10;
+
+  const intervalId = setInterval(function () {
+    if (countdown > 0) {
+      //   console.log(countdown);
+      ticking.innerHTML = countdown;
+    } else {
+      //   console.log("fine countdown");
+      clearInterval(intervalId);
+      boxNumber.style.display = "none";
+    }
+    countdown--;
+  }, 1000);
 });
 
 ///////////////////// FUNZIONI ///////////////////////////
