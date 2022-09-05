@@ -46,11 +46,12 @@ window.addEventListener("load", function () {
     numbers.push(randomNumber);
     // console.log(randomNumber);
   }
-  //   console.log(numbers);
+  console.log(numbers);
   boxNumber.innerHTML = numbers;
-  let countdown = 10;
+  let countdown = 5;
 
   const intervalId = setInterval(function () {
+    countdown--;
     if (countdown > 0) {
       //   console.log(countdown);
       ticking.innerHTML = countdown;
@@ -58,10 +59,22 @@ window.addEventListener("load", function () {
       //   console.log("fine countdown");
       clearInterval(intervalId);
       boxNumber.style.display = "none";
+      ticking.style.display = "none";
     }
-    countdown--;
   }, 1000);
 });
+
+let tentativi = [];
+
+setTimeout(function () {
+  for (i = 0; i < 5; i++) {
+    let numeriInseriti = parseInt(
+      prompt("Prova ad inserire i numeri di prima!")
+    );
+    tentativi.push(numeriInseriti);
+  }
+  console.log(tentativi);
+}, 6000);
 
 ///////////////////// FUNZIONI ///////////////////////////
 
