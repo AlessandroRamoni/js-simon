@@ -76,6 +76,21 @@ setTimeout(function () {
   console.log(tentativi);
 }, 6000);
 
+let results = [];
+
+for (let i = 0; i < numbers.length; i++) {
+  let current = numbers[i];
+  console.log(current);
+
+  if (tentativi.includes(current)) {
+    console.log("Bravo");
+    results.push(current);
+    console.log(results);
+  } else {
+    console.log("Negativo");
+  }
+}
+
 ///////////////////// FUNZIONI ///////////////////////////
 
 function getRandomNumber(min, max) {
