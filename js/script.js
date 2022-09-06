@@ -2,6 +2,7 @@ console.log("Lunedì");
 
 let boxNumber = document.getElementById("box");
 let ticking = document.getElementById("ticking");
+let button = document.getElementById("button");
 let numbers = [];
 let tentativi = [];
 
@@ -43,6 +44,25 @@ window.addEventListener("load", function () {
     }
     countdown--;
   }, 1000);
+
+  //////////// CODICE DA POSTICIPARE?/////////////
+});
+
+button.addEventListener("click", function () {
+  let results = [];
+
+  for (let i = 0; i < tentativi.length; i++) {
+    let singleNumber = tentativi[i];
+    console.log(singleNumber);
+
+    if (numbers.includes(singleNumber)) {
+      //   console.log("Bravo");
+      results.push(singleNumber);
+      console.log(results);
+    } else {
+      console.log("Negativo");
+    }
+  }
 });
 
 /*
