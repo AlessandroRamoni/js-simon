@@ -3,6 +3,7 @@ console.log("Lunedì");
 let boxNumber = document.getElementById("box");
 let ticking = document.getElementById("ticking");
 let button = document.getElementById("button");
+let result = document.getElementById("result");
 let numbers = [];
 let tentativi = [];
 
@@ -13,11 +14,11 @@ let fourthNumber = 0;
 let fifthNumber = 0;
 
 window.addEventListener("load", function () {
-  firstNumber = getRandomNumber(1, 5);
-  secondNumber = getRandomNumber(1, 5);
-  thirdNumber = getRandomNumber(1, 5);
-  fourthNumber = getRandomNumber(1, 5);
-  fifthNumber = getRandomNumber(1, 5);
+  firstNumber = getRandomNumber(1, 100);
+  secondNumber = getRandomNumber(1, 100);
+  thirdNumber = getRandomNumber(1, 100);
+  fourthNumber = getRandomNumber(1, 100);
+  fifthNumber = getRandomNumber(1, 100);
 
   boxNumber.innerHTML = `${firstNumber}, ${secondNumber}, ${thirdNumber}, ${fourthNumber}, ${fifthNumber}`;
 
@@ -59,7 +60,9 @@ button.addEventListener("click", function () {
       //   console.log("Bravo");
       results.push(singleNumber);
       console.log(results);
+      result.innerHTML = `Ti sei ricordato i numeri ${results}`;
     } else {
+      result.innerHTML = "Non ti ricordi niente bruciato!";
       console.log("Negativo");
     }
   }
@@ -143,5 +146,46 @@ function checkValueInArray(array, value) {
   }
   console.log(value + " NON è presente nell'array");
   return false;
+}
+*/
+
+/*
+const numberContainer = document.getElementsById("number-container");
+
+const numbersToGuess = getUniqueRandomNumber(5, 1, 100);
+
+numberContainer.innerHTML = numbersToGuess.join(" - ");
+
+setTimeout(function () {
+  numberContainer.innerHTML = "";
+
+  setTimeout(askNumbersToUser, 100);
+}, 3000);
+
+function askNumbersToUser() {
+  const guessedNumbersByUser = getGuessedNumbersByUser();
+
+  let guessedNumbers = 0;
+
+  for (let i = 0; i < guessedNumbersByUser.length; i++) {
+    const userNumber = guessedNumbersByUser[i];
+    if (numbersToGuess.includes(userNumber)) {
+      console.log("Hai indovinato");
+      guessedNumbers++;
+    }
+  }
+  console.log("Hai indovinato", guessedNumbers, "numeri");
+}
+
+function getGuessedNumbersByUser() {
+  const guessedNumbers = [];
+
+  while (guessedNumbers.length < 5) {
+    const number = parseInt(prompt("Numero"));
+    if (!isNaN(number) && !guessedNumbers.includes(number)) {
+      guessedNumbers.push(number);
+    }
+  }
+  return guessedNumbers;
 }
 */
