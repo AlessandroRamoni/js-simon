@@ -13,41 +13,33 @@ let thirdNumber = 0;
 let fourthNumber = 0;
 let fifthNumber = 0;
 
-window.addEventListener("load", function () {
-  firstNumber = getRandomNumber(1, 100);
-  secondNumber = getRandomNumber(1, 100);
-  thirdNumber = getRandomNumber(1, 100);
-  fourthNumber = getRandomNumber(1, 100);
-  fifthNumber = getRandomNumber(1, 100);
+firstNumber = getRandomNumber(1, 100);
+secondNumber = getRandomNumber(1, 100);
+thirdNumber = getRandomNumber(1, 100);
+fourthNumber = getRandomNumber(1, 100);
+fifthNumber = getRandomNumber(1, 100);
 
-  boxNumber.innerHTML = `${firstNumber}, ${secondNumber}, ${thirdNumber}, ${fourthNumber}, ${fifthNumber}`;
+boxNumber.innerHTML = `${firstNumber}, ${secondNumber}, ${thirdNumber}, ${fourthNumber}, ${fifthNumber}`;
 
-  numbers.push(
-    firstNumber,
-    secondNumber,
-    thirdNumber,
-    fourthNumber,
-    fifthNumber
-  );
-  console.log(numbers);
+numbers.push(firstNumber, secondNumber, thirdNumber, fourthNumber, fifthNumber);
+console.log(numbers);
 
-  let countdown = 5;
+let countdown = 5;
 
-  const intervalId = setInterval(function () {
-    if (countdown > 0) {
-      console.log(countdown);
-      ticking.innerHTML = countdown;
-    } else {
-      console.log("prova");
-      clearInterval(intervalId);
-      boxNumber.style.display = "none";
-      ticking.style.display = "none";
-    }
-    countdown--;
-  }, 1000);
+const intervalId = setInterval(function () {
+  if (countdown > 0) {
+    console.log(countdown);
+    ticking.innerHTML = countdown;
+  } else {
+    console.log("prova");
+    clearInterval(intervalId);
+    boxNumber.style.display = "none";
+    ticking.style.display = "none";
+  }
+  countdown--;
+}, 1000);
 
-  //////////// CODICE DA POSTICIPARE?/////////////
-});
+//////////// CODICE DA POSTICIPARE?/////////////
 
 button.addEventListener("click", function () {
   let results = [];
@@ -60,14 +52,17 @@ button.addEventListener("click", function () {
       //   console.log("Bravo");
       results.push(singleNumber);
       console.log(results);
-      result.innerHTML = `Ti sei ricordato i numeri ${results}`;
     } else {
-      result.innerHTML = "Non ti ricordi niente bruciato!";
       console.log("Negativo");
     }
   }
-});
 
+  if (results.length > 0) {
+    result.innerHTML = `Ti sei ricordato i numeri ${results}`;
+  } else {
+    result.innerHTML = "Non ti ricordi niente bruciato!";
+  }
+});
 /*
 let boxNumber = document.getElementById("box");
 let ticking = document.getElementById("ticking");
